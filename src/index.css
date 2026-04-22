@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-bg: #000000;
+  --color-brand-surface: #0a0a0a;
+  --color-brand-ink: #ffffff;
+  --color-brand-muted: #737373;
+  --color-brand-border: #262626;
+  --color-brand-accent: #ffffff;
+}
+
+.light-theme {
+  --color-brand-bg: #ffffff;
+  --color-brand-surface: #f9fafb;
+  --color-brand-ink: #000000;
+  --color-brand-muted: #6b7280;
+  --color-brand-border: #e5e7eb;
+  --color-brand-accent: #000000;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --color-brand-bg: var(--color-brand-bg);
+  --color-brand-surface: var(--color-brand-surface);
+  --color-brand-ink: var(--color-brand-ink);
+  --color-brand-muted: var(--color-brand-muted);
+  --color-brand-border: var(--color-brand-border);
+  --color-brand-accent: var(--color-brand-accent);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-bg text-brand-ink font-sans antialiased selection:bg-brand-ink selection:text-brand-bg transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .bento-card {
+    @apply border border-brand-border bg-brand-surface rounded-none p-8 hover:border-brand-muted transition-all duration-300;
+  }
+
+  .sharp-btn-primary {
+    @apply px-8 py-4 font-bold uppercase tracking-widest text-xs rounded-none transition-all duration-200 active:scale-95 bg-white text-black hover:bg-neutral-200;
+  }
+  
+  .sharp-btn-secondary {
+    @apply px-8 py-4 font-bold uppercase tracking-widest text-xs rounded-none transition-all duration-200 active:scale-95 border border-brand-border text-white hover:bg-white/5;
+  }
+}
