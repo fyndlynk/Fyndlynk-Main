@@ -12,9 +12,9 @@ export default function Footer() {
         <div className="max-w-xs">
           <Link to="/" className="flex items-center gap-2 mb-10">
             <div className="w-5 h-5 bg-brand-ink flex items-center justify-center transition-colors">
-              <span className="text-brand-bg font-black text-[10px] transition-colors">N</span>
+              <span className="text-brand-bg font-black text-[10px] transition-colors">F</span>
             </div>
-            <span className="text-sm font-black tracking-[0.3em] text-brand-ink transition-colors">NEXUS</span>
+            <span className="text-sm font-black tracking-[0.3em] text-brand-ink transition-colors">FYNDLYNK</span>
           </Link>
           <p className="text-[10px] font-black uppercase tracking-widest text-brand-muted leading-relaxed transition-colors">
             Engineering. Resilience. Speed.<br />The next generation of AI-driven architecture.
@@ -34,7 +34,7 @@ export default function Footer() {
             {
               title: 'Solutions',
               links: [
-                { n: 'PowerApps', p: '/powerapps' },
+                { n: 'Low Code', p: '/low-code' },
                 { n: 'AI Agents', p: '/' },
                 { n: 'Data Ops', p: '/' },
               ]
@@ -42,7 +42,7 @@ export default function Footer() {
             {
               title: 'Terminal',
               links: [
-                { n: 'Email', p: 'mailto:hello@nexus.systems' },
+                { n: 'Email', p: 'mailto:hello@fyndlynk.com' },
                 { n: 'LinkedIn', p: '#' },
                 { n: 'X / Twitter', p: '#' },
               ]
@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-brand-border flex flex-col md:flex-row justify-between gap-6 text-[9px] uppercase tracking-[0.4em] text-brand-muted font-black transition-colors">
-        <p>© 2026 NEXUS SYSTEMS. PROTOCOL REGISTERED.</p>
+        <p>© 2026 FYNDLYNK. PROTOCOL REGISTERED.</p>
         <div className="flex gap-12">
           <span className="hover:text-brand-ink cursor-pointer transition-colors">Privacy</span>
           <span className="hover:text-brand-ink cursor-pointer transition-colors">Terms</span>

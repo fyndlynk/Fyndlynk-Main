@@ -47,7 +47,7 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/powerapps" element={<PowerAppsPage />} />
+          <Route path="/low-code" element={<PowerAppsPage />} />
           <Route path="/blog/:slug" element={<BlogDetailPage />} />
           {/* Catch all to home */}
           <Route path="*" element={<HomePage />} />

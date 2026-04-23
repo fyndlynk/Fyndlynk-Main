@@ -26,7 +26,7 @@ export default function Navbar() {
     { name: 'About', path: '/#about' },
     { name: 'Blog', path: '/#blog' },
     { name: 'Contact', path: '/#contact' },
-    { name: 'PowerApps', path: '/powerapps' },
+    { name: 'Low code', path: '/low-code' },
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function Navbar() {
               to={link.path}
               className={({ isActive }) =>
                 `text-[10px] font-bold uppercase tracking-widest transition-colors hover:text-brand-ink ${
-                  isActive && link.path === '/powerapps' ? 'text-brand-ink' : 'text-brand-muted'
+                  isActive && link.path === '/low-code' ? 'text-brand-ink' : 'text-brand-muted'
                 }`
               }
             >
