@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import PowerAppsPage from './pages/PowerAppsPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -47,6 +48,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/powerapps" element={<PowerAppsPage />} />
+          <Route path="/blog/:slug" element={<BlogDetailPage />} />
           {/* Catch all to home */}
           <Route path="*" element={<HomePage />} />
         </Routes>
@@ -55,4 +57,3 @@ export default function App() {
   );
 }
 
-// test

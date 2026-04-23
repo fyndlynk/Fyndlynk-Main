@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Send } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -82,12 +82,12 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full sharp-btn-primary flex items-center justify-center gap-3 disabled:opacity-50"
+        className="w-full sharp-btn-primary flex items-center justify-center gap-3 disabled:opacity-50 group"
       >
         {status === 'submitting' ? 'Logging Message...' : (
           <>
             Initialize Transmission
-            <Send size={14} />
+            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </>
         )}
       </button>

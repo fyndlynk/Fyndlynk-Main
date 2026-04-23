@@ -4,7 +4,7 @@
  */
 
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -39,7 +39,7 @@ export default function HeroSection() {
             <button className="w-full sm:w-auto sharp-btn-primary group">
               <span className="flex items-center justify-center gap-3">
                 Get Started
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </span>
             </button>
             <button className="w-full sm:w-auto sharp-btn-secondary">

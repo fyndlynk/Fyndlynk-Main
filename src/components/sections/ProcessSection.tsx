@@ -22,10 +22,10 @@ export default function ProcessSection() {
 
         <div className="grid md:grid-cols-4 gap-px bg-brand-border">
           {[
-            { step: '01', title: 'Analyze', desc: 'Identify core workflow constraints.' },
-            { step: '02', title: 'Architect', desc: 'Define system scaling parameters.' },
-            { step: '03', title: 'Execute', desc: 'Neural build and deployment cycles.' },
-            { step: '04', title: 'Optimize', desc: 'Continuous telemetry and iteration.' },
+            { title: 'Analyze', desc: 'Identify core workflow constraints.' },
+            { title: 'Architect', desc: 'Define system scaling parameters.' },
+            { title: 'Execute', desc: 'Neural build and deployment cycles.' },
+            { title: 'Optimize', desc: 'Continuous telemetry and iteration.' },
           ].map((item, idx) => (
             <motion.div 
               key={item.title}
@@ -33,7 +33,6 @@ export default function ProcessSection() {
               transition={{ delay: idx * 0.1 }}
               className="bg-brand-bg p-12 hover:bg-brand-surface transition-all group"
             >
-              <span className="text-[10px] font-black text-brand-muted group-hover:text-brand-ink transition-colors mb-8 block">// {item.step}</span>
               <h4 className="text-xl font-black uppercase mb-6 text-brand-ink transition-colors">{item.title}</h4>
               <p className="text-sm text-brand-muted font-medium leading-relaxed transition-colors">{item.desc}</p>
             </motion.div>

@@ -13,7 +13,7 @@
 
 .light-theme {
   --color-brand-bg: #ffffff;
-  --color-brand-surface: #f9fafb;
+  --color-brand-surface: #f2f4f7;
   --color-brand-ink: #000000;
   --color-brand-muted: #6b7280;
   --color-brand-border: #e5e7eb;
@@ -49,10 +49,10 @@
   }
 
   .sharp-btn-primary {
-    @apply px-8 py-4 font-bold uppercase tracking-widest text-xs rounded-none transition-all duration-200 active:scale-95 bg-white text-black hover:bg-neutral-200;
+    @apply px-8 py-4 font-bold uppercase tracking-widest text-xs rounded-none transition-all duration-200 active:scale-95 bg-brand-ink text-brand-bg hover:opacity-80;
   }
   
   .sharp-btn-secondary {
-    @apply px-8 py-4 font-bold uppercase tracking-widest text-xs rounded-none transition-all duration-200 active:scale-95 border border-brand-border text-white hover:bg-white/5;
+    @apply px-8 py-4 font-bold uppercase tracking-widest text-xs rounded-none transition-all duration-200 active:scale-95 border border-brand-border text-brand-ink hover:bg-brand-surface;
   }
 }

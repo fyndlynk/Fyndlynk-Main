@@ -4,7 +4,7 @@
  */
 
 import { motion } from 'motion/react';
-import { Smartphone, Zap, Database, ArrowRight, Grid, Layout } from 'lucide-react';
+import { Smartphone, Zap, Database, ArrowUpRight, LayoutGrid, Layers } from 'lucide-react';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -52,7 +52,7 @@ export default function PowerAppsPage() {
                 </p>
               </div>
               <div className="flex-1 w-full bg-brand-surface aspect-video flex items-center justify-center transition-colors">
-                 <Grid size={48} className="text-brand-muted opacity-20 transition-colors" />
+                 <LayoutGrid size={48} className="text-brand-muted opacity-20 transition-colors" />
               </div>
             </motion.div>
 

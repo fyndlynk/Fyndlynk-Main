@@ -49,14 +49,14 @@ export default function Footer() {
             }
           ].map((col) => (
             <div key={col.title}>
-              <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-ink mb-8 transition-colors">// {col.title}</h4>
+              <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-ink mb-8 transition-colors">{col.title}</h4>
               <ul className="space-y-4 text-[10px] uppercase font-black tracking-widest text-brand-muted">
                 {col.links.map((link) => (
                   <li key={link.n}>
                     {link.p.startsWith('mailto') ? (
-                      <a href={link.p} className="hover:text-brand-ink transition-colors">[{link.n}]</a>
+                      <a href={link.p} className="hover:text-brand-ink transition-colors">{link.n}</a>
                     ) : (
-                      <Link to={link.p} className="hover:text-brand-ink transition-colors">[{link.n}]</Link>
+                      <Link to={link.p} className="hover:text-brand-ink transition-colors">{link.n}</Link>
                     )}
                   </li>
                 ))}
