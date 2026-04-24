@@ -18,7 +18,8 @@ import {
   ShieldCheck,
   Timer,
   TrendingUp,
-  Layout
+  Layout,
+  ExternalLink
 } from 'lucide-react';
 import { useEffect } from 'react';
 import ContactForm from '../components/ui/ContactForm';
@@ -68,8 +69,9 @@ export default function PowerAppsPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <div className="inline-flex items-center gap-3 mb-8">
-              <div className="w-1.5 h-1.5 bg-brand-ink" />
+            <div className="inline-flex items-center gap-4 mb-8">
+              <img src="input_file_0.png" alt="Power Platform" className="w-8 h-8" referrerPolicy="no-referrer" />
+              <div className="h-4 w-px bg-brand-border" />
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-muted">Solution // Modern Low-Code</span>
             </div>
             <h1 className="text-5xl md:text-[100px] font-black tracking-[-0.04em] leading-[0.85] mb-12 text-brand-ink transition-colors uppercase italic">
@@ -142,21 +144,26 @@ export default function PowerAppsPage() {
             {[
               {
                 icon: Layout,
-                title: 'Power Apps ',
+                logoUrl: "input_file_2.png",
+                title: 'Power Apps',
                 items: ['Custom Canvas Apps', 'Model-Driven Design', 'Mobile-Ready UX', 'Copilot Assistance']
               },
               {
                 icon: Zap,
+                logoUrl: "input_file_3.png",
                 title: 'Automation',
                 items: ['300+ Connectors', 'Approval Flows', 'Real-time Triggers', 'Enterprise RPA']
               },
               {
                 icon: BarChart3,
+                logoUrl: "input_file_4.png",
                 title: 'Analytics',
-                items: ['Power BI Dashboards', 'AI Builder Models', 'Predictive Insights', 'Data Pipelines']
+                items: ['Power BI Dashboards', 'AI Builder Models', 'Predictive Insights', 'Data Pipelines'],
+                hasCopilot: true
               },
               {
                 icon: Plug,
+                logoUrl: "input_file_6.png",
                 title: 'Integrations',
                 items: ['Dynamics 365 Native', 'Microsoft 365 Core', 'Azure Extensions', 'Custom REST APIs']
               }
@@ -165,11 +172,30 @@ export default function PowerAppsPage() {
                 key={service.title}
                 {...fadeInUp}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-brand-bg p-12 hover:bg-brand-surface transition-colors h-full"
+                className="bg-brand-bg p-12 hover:bg-brand-surface transition-colors h-full flex flex-col"
               >
-                <service.icon size={32} className="mb-8 text-brand-muted" />
+                <div className="mb-8 flex items-center justify-between">
+                  {service.logoUrl ? (
+                    <div className="flex items-center gap-4">
+                      <img 
+                        src={service.logoUrl} 
+                        alt={service.title} 
+                        className="w-10 h-10 transition-all duration-500 hover:scale-110" 
+                        referrerPolicy="no-referrer" 
+                      />
+                      {service.hasCopilot && (
+                        <div className="flex items-center gap-2 px-2 py-0.5 border border-brand-ink/10 bg-brand-surface rounded-full">
+                          <img src="input_file_1.png" alt="Copilot" className="w-4 h-4" referrerPolicy="no-referrer" />
+                          <span className="text-[7px] font-black uppercase tracking-widest text-brand-muted">Copilot</span>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <service.icon size={32} className="text-brand-muted" />
+                  )}
+                </div>
                 <h3 className="text-2xl font-black uppercase mb-8 text-brand-ink italic">{service.title}</h3>
-                <ul className="space-y-4">
+                <ul className="space-y-4 mb-8">
                   {service.items.map(item => (
                     <li key={item} className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-brand-muted">
                       <ChevronRight size={12} className="text-brand-ink" />
@@ -280,19 +306,22 @@ export default function PowerAppsPage() {
                 title: "Automated Invoice Processing",
                 desc: "100,000+ invoices/month from 100+ vendors in 300+ formats. We built an automated pipeline using AI Builder and Power Apps.",
                 result: "96% extraction accuracy and 70%+ reduction in manual costs.",
-                color: "bg-neutral-900"
+                color: "bg-neutral-900",
+                icon: Zap
               },
               {
                 title: "Employee Onboarding Automation",
                 desc: "A global firm of 6,000 employees struggled with slow IT setup. We implemented 'Launchpad', a Dataverse-backed automation suite.",
                 result: "Instant tool access for new hires and significant IT resource recovery.",
-                color: "bg-neutral-800"
+                color: "bg-neutral-800",
+                icon: Smartphone
               },
               {
                 title: "Healthcare Scheduling & Billing",
                 desc: "Replaced paper-based scheduling with Power Apps portals and Copilot agents for 800,000+ patient appointments.",
                 result: "Scale-ready clinic infrastructure with zero paper overhead.",
-                color: "bg-neutral-700"
+                color: "bg-neutral-700",
+                icon: ShieldCheck
               }
             ].map((study, idx) => (
               <motion.div 
@@ -302,7 +331,7 @@ export default function PowerAppsPage() {
               >
                 <div className={`lg:col-span-7 aspect-video ${study.color} border border-brand-border flex items-center justify-center relative overflow-hidden group`}>
                    <div className="absolute inset-0 bg-brand-ink opacity-0 group-hover:opacity-10 transition-opacity" />
-                   <Database size={80} className="text-white opacity-10" />
+                   <study.icon size={80} className="text-white opacity-10 group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="lg:col-span-5">
                    <h3 className="text-2xl md:text-4xl font-black uppercase mb-8 text-brand-ink italic leading-tight transition-colors">{study.title}</h3>
@@ -345,6 +374,27 @@ export default function PowerAppsPage() {
                </motion.div>
              ))}
            </div>
+        </div>
+      </section>
+
+      {/* Platform Ecosystem */}
+      <section className="py-24 px-6 border-b border-brand-border transition-colors">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-60 hover:opacity-100 transition-all duration-700">
+            {[
+              { name: 'Power Apps', url: 'input_file_2.png' },
+              { name: 'Power Automate', url: 'input_file_3.png' },
+              { name: 'Power BI', url: 'input_file_4.png' },
+              { name: 'Power Pages', url: 'input_file_5.png' },
+              { name: 'Dataverse', url: 'input_file_6.png' },
+              { name: 'Dynamics 365', url: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Microsoft_Dynamics_365.svg' },
+              { name: 'Teams', url: 'input_file_7.png' },
+              { name: 'SharePoint', url: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/Microsoft_SharePoint_logo.svg' },
+              { name: 'Azure', url: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg' }
+            ].map((logo) => (
+              <img key={logo.name} src={logo.url} alt={logo.name} title={logo.name} className="h-6 md:h-8 w-auto transition-all hover:scale-125" referrerPolicy="no-referrer" />
+            ))}
+          </div>
         </div>
       </section>
 
